@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hbF-8z-3X5">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Face Mesh-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Face Mesh" id="BYZ-38-t0r" customClass="FaceMeshViewController" customModule="FaceMeshSpike" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVF-hf-jti">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </arscnView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HW8-a1-b6c">
+                                <rect key="frame" x="16" y="779" width="358" height="32"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                </segments>
+                                <connections>
+                                    <action selector="renderType:" destination="BYZ-38-t0r" eventType="valueChanged" id="W9g-XZ-U7w"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MVF-hf-jti" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5FY-on-PYm"/>
+                            <constraint firstItem="MVF-hf-jti" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="K2J-AW-Mgx"/>
+                            <constraint firstAttribute="bottom" secondItem="MVF-hf-jti" secondAttribute="bottom" id="YRs-01-cNJ"/>
+                            <constraint firstItem="MVF-hf-jti" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ysi-Nv-R26"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HW8-a1-b6c" secondAttribute="trailing" constant="16" id="c0y-TF-xW2"/>
+                            <constraint firstItem="HW8-a1-b6c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="d2L-ZI-NYA"/>
+                            <constraint firstItem="HW8-a1-b6c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mVW-qk-Djk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="SPIKE (3D Face Mesh Detection)" id="PzG-Ic-a50"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="sceneView" destination="MVF-hf-jti" id="Ew4-zM-ZA2"/>
+                        <outlet property="segmentedControl" destination="HW8-a1-b6c" id="lV9-RU-VeC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066.1538461538462" y="2.8436018957345972"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1dW-Os-zRB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hbF-8z-3X5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SKS-c6-fG3">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qwq-d8-5hE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gs-sx-c6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
